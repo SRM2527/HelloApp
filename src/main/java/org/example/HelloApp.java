@@ -2,20 +2,19 @@ package org.example;
 
 public class HelloApp {
     public static void main(String[] args) {
-        String namesText;
         if(args.length == 0) {
-            namesText = "World";
+            System.out.println("Hello, World!");
+            return;
         }
-        else {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder("Hello ");
+            String delimiter = " , ";
             for (String name: args) {
-                if(sb.length() > 0) {
-                    sb.append(" , ");
+                sb.append(name).append(delimiter);
                 }
-                sb.append(name);
-            }
-            namesText = sb.toString();
+            String result = sb.toString();
+            if (result.endsWith(delimiter)) {
+                result = result.substring(0, result.length() - delimiter.length());
         }
-        System.out.println("Hello, " + namesText + "!");
+        System.out.println(result + "!");
     }
 }
