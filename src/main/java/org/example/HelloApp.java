@@ -6,15 +6,7 @@ public class HelloApp {
             System.out.println("Hello, World!");
             return;
         }
-            StringBuilder sb = new StringBuilder("Hello ");
-            String delimiter = " , ";
-            for (String name: args) {
-                sb.append(name).append(delimiter);
-                }
-            String result = sb.toString();
-            if (result.endsWith(delimiter)) {
-                result = result.substring(0, result.length() - delimiter.length());
-        }
-        System.out.println(result + "!");
+            String names = String.join(", ", args);
+        System.out.println("Hello," + names + "!");
     }
 }
